@@ -1,7 +1,6 @@
 # ============================================
 # CALCULADORA EN PYTHON - Proyecto para GitHub
-# Autor: Tu nombre aquí
-# Descripción: Calculadora básica con las 4 operaciones
+# Descripcion: Calculadora básica con las 4 operaciones
 # ============================================
 
 
@@ -84,7 +83,7 @@ def main():
         num1 = pedir_numero("Escribe el primer número: ")
         num2 = pedir_numero("Escribe el segundo número: ")
 
-        # ---- PASO 6: Ejecutamos la operación según la opción elegida ----
+        # ---- PASO 6: Ejecutamos la operacion segun la opcionn elegida ----
         if opcion == "1":
             resultado = sumar(num1, num2)
             operacion = "+"
