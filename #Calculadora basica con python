@@ -1,0 +1,112 @@
+# ============================================
+# CALCULADORA EN PYTHON - Proyecto para GitHub
+# Autor: Tu nombre aquí
+# Descripción: Calculadora básica con las 4 operaciones
+# ============================================
+
+
+# ---- PASO 1: Definimos las funciones de cada operación ----
+
+def sumar(a, b):
+    # Esta función recibe dos números y regresa su suma
+    return a + b
+
+def restar(a, b):
+    # Esta función recibe dos números y regresa su resta
+    return a - b
+
+def multiplicar(a, b):
+    # Esta función recibe dos números y regresa su multiplicación
+    return a * b
+
+def dividir(a, b):
+    # Antes de dividir, verificamos que no estemos dividiendo entre cero
+    # (eso causaría un error matemático)
+    if b == 0:
+        return "Error: No se puede dividir entre cero"
+    return a / b
+
+
+# ---- PASO 2: Creamos el menú que verá el usuario ----
+
+def mostrar_menu():
+    # Imprimimos las opciones disponibles de forma bonita
+    print("\n==============================")
+    print("      🧮 CALCULADORA PYTHON")
+    print("==============================")
+    print("  1. Sumar")
+    print("  2. Restar")
+    print("  3. Multiplicar")
+    print("  4. Dividir")
+    print("  5. Salir")
+    print("==============================")
+
+
+# ---- PASO 3: Pedimos los números al usuario con validación ----
+
+def pedir_numero(mensaje):
+    # Usamos un bucle para seguir preguntando si el usuario escribe algo incorrecto
+    while True:
+        try:
+            # Intentamos convertir lo que escribe el usuario a número decimal
+            numero = float(input(mensaje))
+            return numero
+        except ValueError:
+            # Si el usuario escribe letras, le avisamos y volvemos a preguntar
+            print("⚠️  Por favor, escribe un número válido.")
+
+
+# ---- PASO 4: Función principal que une todo el programa ----
+
+def main():
+    print("¡Bienvenido a la calculadorsita")
+
+    # El bucle principal mantiene la calculadora funcionando hasta que el usuario salga
+    while True:
+
+        # Mostramos el menú de opciones
+        mostrar_menu()
+
+        # Le pedimos al usuario que elija una opción
+        opcion = input("\nElige una opción (1-5): ")
+
+        # Si elige salir, terminamos el programa
+        if opcion == "5":
+            print("\n👋 ¡Hasta luego, Gracias por usar la calculadordita.")
+            break
+
+        # Verificamos que la opción sea válida (1, 2, 3 o 4)
+        if opcion not in ["1", "2", "3", "4"]:
+            print("⚠️  Opción no válida. Elige entre 1 y 5.")
+            continue  # Volvemos al inicio del bucle
+
+        # ---- PASO 5: Pedimos los dos números para operar ----
+        num1 = pedir_numero("Escribe el primer número: ")
+        num2 = pedir_numero("Escribe el segundo número: ")
+
+        # ---- PASO 6: Ejecutamos la operación según la opción elegida ----
+        if opcion == "1":
+            resultado = sumar(num1, num2)
+            operacion = "+"
+
+        elif opcion == "2":
+            resultado = restar(num1, num2)
+            operacion = "-"
+
+        elif opcion == "3":
+            resultado = multiplicar(num1, num2)
+            operacion = "×"
+
+        elif opcion == "4":
+            resultado = dividir(num1, num2)
+            operacion = "÷"
+
+        # ---- PASO 7: Mostramos el resultado al usuario ----
+        print(f"\n✅ Resultado: {num1} {operacion} {num2} = {resultado}")
+
+
+# ---- PASO 8: Punto de entrada del programa ----
+# Esta línea asegura que main() solo se ejecute cuando corras este archivo directamente
+# (no cuando lo importes desde otro archivo)
+if __name__ == "__main__":
+    main()
