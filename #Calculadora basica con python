@@ -31,7 +31,7 @@ def dividir(a, b):
 def mostrar_menu():
     # Imprimimos las opciones disponibles de forma bonita
     print("\n==============================")
-    print("      🧮 CALCULADORA PYTHON")
+    print("      🧮 CALCULADORSITA PYTHON")
     print("==============================")
     print("  1. Sumar")
     print("  2. Restar")
